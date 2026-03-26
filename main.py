@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 import psycopg2
 import os
 from urllib.parse import urlparse
-from flask import Flask
 
 app = Flask(__name__)
 
@@ -20,7 +19,6 @@ if DATABASE_URL:
     )
 else:
     conn = None
-
 
 # Создание таблицы при старте
 if conn:
@@ -48,7 +46,6 @@ def echo():
         "you_sent": data,
         "length": len(str(data)) if data else 0
     })
-
 
 
 @app.route('/save', methods=['POST'])
@@ -79,7 +76,5 @@ def get_messages():
     return jsonify(messages)
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
