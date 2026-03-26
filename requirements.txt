@@ -1,8 +1,5 @@
 Flask==3.0.0
-<<<<<<< HEAD
 psycopg2==2.9.9
 gunicorn==22.0.0
-=======
 psycopg[binary]==3.2.0
 gunicorn==22.0.0
->>>>>>> 58459b42aed95abf3180202d162160f137dc027d
