@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-import psycopg2
+import psycopg
 import os
 from urllib.parse import urlparse
 
@@ -10,8 +10,8 @@ DATABASE_URL = os.environ.get('DATABASE_URL')
 
 if DATABASE_URL:
     url = urlparse(DATABASE_URL)
-    conn = psycopg2.connect(
-        database=url.path[1:],
+    conn = psycopg.connect(
+        dbname=url.path[1:],      # database -> dbname
         user=url.username,
         password=url.password,
         host=url.hostname,
