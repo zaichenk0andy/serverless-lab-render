@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import psycopg2
 import os
 from urllib.parse import urlparse
+from flask import Flask
 
 app = Flask(__name__)
 
@@ -48,6 +49,7 @@ def echo():
     })
 
 
+
 @app.route('/save', methods=['POST'])
 def save_message():
     if not conn:
@@ -76,5 +78,8 @@ def get_messages():
     return jsonify(messages)
 
 
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+=======
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
