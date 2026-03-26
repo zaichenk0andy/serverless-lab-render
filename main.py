@@ -21,6 +21,7 @@ if DATABASE_URL:
 else:
     conn = None
 
+
 # Создание таблицы при старте
 if conn:
     with conn.cursor() as cur:
